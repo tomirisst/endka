@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+package greet;
+
+option go_package="gitlab.com\\tleuzhan13\\grpc-go-course\\greet\\greetpb;greetpb";
+
+message Greeting{
+  int64 number = 1;
+}
+
+message GreetRequest{
+  Greeting greeting = 1;
+}
+
+message GreetResponse {
+  string result = 1;
+}
+
+service GreetService{
+  rpc Greet(GreetRequest) returns (GreetResponse) {};
+}
